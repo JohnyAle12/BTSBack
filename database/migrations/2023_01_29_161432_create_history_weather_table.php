@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->string('city');
-            $table->decimal('latitude', 3, 6);
-            $table->decimal('longitude', 3, 6);
-            $table->string('humidity');
+            $table->double('latitude', 3, 2);
+            $table->double('longitude', 3, 2);
+            $table->integer('humidity');
             $table->timestamps();
         });
     }
