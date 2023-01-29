@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\HistoryRequest;
 use App\Services\HistoryService;
+use Illuminate\Http\JsonResponse;
 
 class HistoryController extends Controller
 {
@@ -12,21 +13,9 @@ class HistoryController extends Controller
     ) {
     }
 
-    public function store(HistoryRequest $request)
+    public function store(HistoryRequest $request): JsonResponse
     {
-        try {
-            $history = $this->historyService->createHistory($request);
-
-            return response()->json([
-                'message' => 'History was created successfuly',
-                'history' => $history
-            ], 201);
-        } catch (\Exception $ex) {
-            return response()->json([
-                'message' => $ex->getMessage(),
-                'trace' => $ex->getTrace()
-            ]);
-        }   
+        return $this->historyService->createHistory($request);  
     }
 
 }
