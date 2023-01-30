@@ -7,6 +7,7 @@ namespace App\Services;
 use App\Http\Requests\HistoryRequest;
 use App\Models\HistoryWeather;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class HistoryService 
 {
@@ -31,5 +32,15 @@ class HistoryService
                 'trace' => $ex->getTrace()
             ]);
         }
+    }
+
+    public function getHistory(Request $request): JsonResponse
+    {   
+        $history = HistoryWeather::where('user_id', $request->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return response()->json([
+            'data' => $history
+        ]);
     }
 }
