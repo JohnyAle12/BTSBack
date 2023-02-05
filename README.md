@@ -2,7 +2,7 @@
 
 ## About Project
 
-This is a web api where i put some knowledges about laravel framework, here i build a basic api service to auth users and create a history inquiries. For this project i'm using strong typing, dependency injection, POO, clean code among others goos practices.
+This is a rest api where i put some knowledges about laravel framework, here i build a basic api service to auth users and create a history inquiries. For this project i'm using strong typing, dependency injection, POO, clean code, SOLID principles among others goods practices.
 
 ## Start Project
 
