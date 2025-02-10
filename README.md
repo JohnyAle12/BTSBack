@@ -20,10 +20,12 @@ After configure your .env file according your database enviroment and execute th
 $ php artisan migrate
 ```
 
+You need to create a .env file and set the environment variables, you can copy the .env.example and only set the database variables according your local system
+
 For generate the new application key
 
 ```bash
-# generat new key aplication on the .env file
+# generate new key aplication on the .env file
 $ php artisan key:generate
 ```
 
